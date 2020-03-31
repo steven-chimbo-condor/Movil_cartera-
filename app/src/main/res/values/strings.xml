@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Prototipo</string>
+    <string name="title_activity_pantalla_imgen">pantalla_imgen</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
