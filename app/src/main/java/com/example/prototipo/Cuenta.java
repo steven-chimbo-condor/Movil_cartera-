@@ -16,6 +16,10 @@ public class Cuenta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuenta);
+
+
+        ConexionSQLiteHelper conexion = new ConexionSQLiteHelper(getApplicationContext(),"bd_cuenta",null,1);
+
         crear= (ImageView) findViewById(R.id.crear);
         cuenta=(ImageView) findViewById(R.id.cuenta);
 
@@ -30,8 +34,8 @@ public class Cuenta extends AppCompatActivity {
         cuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(Cuenta.this,Ahorros.class);
-                startActivity(intent);
+                Intent nuevo= new Intent(Cuenta.this,Ahorros.class);
+                startActivity(nuevo);
 
             }
         });

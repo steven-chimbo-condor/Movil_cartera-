@@ -22,7 +22,7 @@ import com.example.prototipo.Utilidades.utilidades;
 public class Banco extends AppCompatActivity {
     ImageView regresar;
     Dialog daialogo;
-    private EditText nombre;
+    private EditText nombre_cuenta;
     private EditText dinero;
     private Button crear;
 
@@ -35,7 +35,7 @@ public class Banco extends AppCompatActivity {
 
         regresar= (ImageView) findViewById(R.id.regresar);
         crear=(Button) findViewById(R.id.b_crear);
-        nombre= (EditText) findViewById(R.id.nombre);
+        nombre_cuenta= (EditText) findViewById(R.id.nombre);
         dinero= (EditText) findViewById(R.id.numero);
         daialogo = new Dialog(this);
 
@@ -53,16 +53,34 @@ public class Banco extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 GuardarDatos();
-                nombre.setText(null);
+                //registrarcuentas();
+                nombre_cuenta.setText(null);
                 dinero.setText(null);
             }
         });
 
 
     }
+/*
+    private void registrarcuentas() {
+        //creo la coneccion a la base de datos
+        ConexionSQLiteHelper conexion = new ConexionSQLiteHelper(this,"bd_cuenta",null,1);
+        //puedo escribir mis datos
+        SQLiteDatabase database=conexion.getWritableDatabase();
+        //intertar datos en la tabla
+        String insert="INSERT INTO "+utilidades.TABLA_CUENTA+"("+utilidades.CAMPO_NOMBRE+","
+                +utilidades.CAMPO_DINERO+")"+"VALUES('"+nombre_cuenta.getText().toString()+"','"
+                +dinero.getText().toString()+"')";
 
+        Toast.makeText(getApplicationContext(),"Datos guarados",Toast.LENGTH_SHORT).show();
 
+        database.execSQL(insert);
 
+        database.close();
+
+    }
+
+*/
     //metodo para crea venta de ayuda
     public void ShowPupop(View view){
         TextView cerrar;
@@ -81,6 +99,13 @@ public class Banco extends AppCompatActivity {
 
 
     public void GuardarDatos(){
+        ConexionSQLiteHelper db= new ConexionSQLiteHelper(getApplicationContext(),null,null,1);
+        String nombre = nombre_cuenta.getText().toString();
+        String apellido = dinero.getText().toString();
+        String mensaje =db.guardar(nombre, apellido);
+        Toast.makeText(getApplicationContext(),mensaje,Toast.LENGTH_SHORT).show();
+
+        /*
         //creo la coneccion a la base de datos
         ConexionSQLiteHelper conexion = new ConexionSQLiteHelper(this,"bd_cuenta",null,1);
         //puedo escribir mis datos
@@ -94,7 +119,7 @@ public class Banco extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Datos guarados",Toast.LENGTH_SHORT).show();
 
         database.close();
-
+*/
 
         /*
         String nom_cuenta=nombre.getText().toString();

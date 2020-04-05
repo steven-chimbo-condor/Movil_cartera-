@@ -1,14 +1,18 @@
-package com.example.prototipo;
+package com.example.prototipo.entidades;
 
 public class Modelo {
 
     private String nombre_cuenta;
-    private int valor_cuenta;
+    private String valor_cuenta;
 
-    public Modelo() {
+    public Modelo(String nombre_cuenta, String valor_cuenta) {
         this.nombre_cuenta = nombre_cuenta;
         this.valor_cuenta = valor_cuenta;
     }
+    public Modelo(){
+
+    }
+
 
     public String getNombre_cuenta() {
         return nombre_cuenta;
@@ -18,11 +22,11 @@ public class Modelo {
         this.nombre_cuenta = nombre_cuenta;
     }
 
-    public int getValor_cuenta() {
+    public String getValor_cuenta() {
         return valor_cuenta;
     }
 
-    public void setValor_cuenta( int valor_cuenta) {
+    public void setValor_cuenta(String valor_cuenta) {
         this.valor_cuenta = valor_cuenta;
     }
 }

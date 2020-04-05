@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         iniciar = (Button) findViewById(R.id.inicio);
 
-        //envio que va haecr el vboton
+        //envio la accion al boton
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View view) {
