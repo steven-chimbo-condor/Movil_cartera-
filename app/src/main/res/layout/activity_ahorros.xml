@@ -21,13 +21,19 @@
 
     <ListView
         android:id="@+id/lista"
-        android:layout_width="373dp"
-        android:layout_height="593dp"
-        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="545dp"
+        android:layout_above="@+id/button3"
+        android:layout_below="@+id/button3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="-613dp"
         android:backgroundTint="#00FFFFFF"
-        android:scrollbarStyle="outsideInset"></ListView>
+        android:scrollbarStyle="outsideInset" />
 
 
 </RelativeLayout>

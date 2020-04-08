@@ -52,8 +52,8 @@ public class Banco extends AppCompatActivity {
         crear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GuardarDatos();
-                //registrarcuentas();
+                //GuardarDatos();
+                registrarUsuarios();
                 nombre_cuenta.setText(null);
                 dinero.setText(null);
             }
@@ -96,16 +96,32 @@ public class Banco extends AppCompatActivity {
         daialogo.show();
 
     }
+    private void registrarUsuarios() {
+        //es donde se guarda la base de datos SQLite
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_cuenta",null,1);
+
+        SQLiteDatabase db=conn.getWritableDatabase();
+
+        ContentValues values=new ContentValues();
+        values.put(utilidades.CAMPO_NOMBRE,nombre_cuenta.getText().toString());
+        values.put(utilidades.CAMPO_DINERO,dinero.getText().toString());
 
 
-    public void GuardarDatos(){
-        ConexionSQLiteHelper db= new ConexionSQLiteHelper(getApplicationContext(),null,null,1);
+        Long idResultante=db.insert(utilidades.TABLA_CUENTA,utilidades.CAMPO_NOMBRE,values);
+
+        Toast.makeText(getApplicationContext(),"Cuenta Registrada: "+idResultante,Toast.LENGTH_SHORT).show();
+        db.close();
+    }
+
+/*
+    public void GuardarDatos() {
+        ConexionSQLiteHelper db = new ConexionSQLiteHelper(getApplicationContext(), null, null, 1);
         String nombre = nombre_cuenta.getText().toString();
         String apellido = dinero.getText().toString();
-        String mensaje =db.guardar(nombre, apellido);
-        Toast.makeText(getApplicationContext(),mensaje,Toast.LENGTH_SHORT).show();
+        String mensaje = db.guardar(nombre, apellido);
+        Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
 
-        /*
+
         //creo la coneccion a la base de datos
         ConexionSQLiteHelper conexion = new ConexionSQLiteHelper(this,"bd_cuenta",null,1);
         //puedo escribir mis datos
@@ -119,9 +135,9 @@ public class Banco extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"Datos guarados",Toast.LENGTH_SHORT).show();
 
         database.close();
-*/
 
-        /*
+
+
         String nom_cuenta=nombre.getText().toString();
         String num_cantidad=numero.getText().toString();
 
@@ -137,6 +153,7 @@ public class Banco extends AppCompatActivity {
 
         Toast.makeText(this,"Datos guarados",Toast.LENGTH_SHORT).show();
 
-*/
+
     }
+    */
 }

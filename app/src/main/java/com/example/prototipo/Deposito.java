@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.prototipo.entidades.Modelo;
+
 public class Deposito  extends AppCompatActivity {
-    private Ahorros item;
+
     private ImageView regresar;
     private TextView txt_nombre;
     private TextView txt_dinero;
@@ -24,10 +26,14 @@ public class Deposito  extends AppCompatActivity {
         txt_dinero = findViewById(R.id.saldo_dinero);
         // item =(Ahorros)getIntent().
 
-        ConexionSQLiteHelper db = new ConexionSQLiteHelper(getApplicationContext(), null, null, 1);
+        Bundle objetoEnviado=getIntent().getExtras();
+        Modelo user=null;
 
-        txt_nombre.getText().toString();
-
+        if(objetoEnviado!=null){
+            user= (Modelo) objetoEnviado.getSerializable("cuenta");
+            txt_nombre.setText(user.getNombre_cuenta().toString());
+            txt_dinero.setText(user.getValor_cuenta().toString());
+        }
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +42,5 @@ public class Deposito  extends AppCompatActivity {
 
             }
         });
-
-
     }
 }

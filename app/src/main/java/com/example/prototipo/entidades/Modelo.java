@@ -1,6 +1,8 @@
 package com.example.prototipo.entidades;
 
-public class Modelo {
+import java.io.Serializable;
+
+public class Modelo implements Serializable {
 
     private String nombre_cuenta;
     private String valor_cuenta;
@@ -9,7 +11,8 @@ public class Modelo {
         this.nombre_cuenta = nombre_cuenta;
         this.valor_cuenta = valor_cuenta;
     }
-    public Modelo(){
+
+    public Modelo() {
 
     }
 
