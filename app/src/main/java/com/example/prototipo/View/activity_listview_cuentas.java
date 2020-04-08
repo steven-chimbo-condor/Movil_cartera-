@@ -1,5 +1,4 @@
-package com.example.prototipo;
-
+package com.example.prototipo.View;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,19 +8,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.prototipo.Utilidades.utilidades;
-import com.example.prototipo.entidades.Modelo;
+import com.example.prototipo.Modelo.Modelo;
+import com.example.prototipo.R;
+import com.example.prototipo.SQLite.ConexionSQLiteHelper;
+import com.example.prototipo.SQLite.utilidades;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Ahorros extends AppCompatActivity {
+public class activity_listview_cuentas extends AppCompatActivity {
 
-    ListView listViewPersonas;
+    ListView listViewPersonas;//lista creada
     ArrayList<String> listaInformacion;
     ArrayList<Modelo> listaCuenta;
 
@@ -30,17 +29,18 @@ public class Ahorros extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ahorros);
+        setContentView(R.layout.activity_listview_cuentas);
 
         conn=new ConexionSQLiteHelper(getApplicationContext(),"bd_cuenta",null,1);
 
         listViewPersonas= (ListView) findViewById(R.id.lista);
 
-        consultarListaPersonas();
+        consultarListaCuentas();
 
         ArrayAdapter adaptador=new ArrayAdapter(this,android.R.layout.simple_list_item_1,listaInformacion);
         listViewPersonas.setAdapter(adaptador);
 
+        //metodo que cuando doy click en un item me muestre la otra activity
         listViewPersonas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
@@ -52,7 +52,7 @@ public class Ahorros extends AppCompatActivity {
 
                 Modelo user=listaCuenta.get(pos);
 
-                Intent intent=new Intent(Ahorros.this,Deposito.class);
+                Intent intent=new Intent(activity_listview_cuentas.this, activity_Deposito.class);
 
                 Bundle bundle=new Bundle();
                 bundle.putSerializable("cuenta",user);
@@ -66,21 +66,22 @@ public class Ahorros extends AppCompatActivity {
 
     }
 
-    private void consultarListaPersonas() {
+    private void consultarListaCuentas() {
+
         SQLiteDatabase db=conn.getReadableDatabase();
 
-        Modelo usuario=null;
+        Modelo cuenta=null;
         listaCuenta=new ArrayList<Modelo>();
         //select * from cuenta
-        Cursor cursor=db.rawQuery("SELECT * FROM "+utilidades.TABLA_CUENTA,null);
+        Cursor cursor=db.rawQuery("SELECT * FROM "+ utilidades.TABLA_NOMBRE,null);
 
         while (cursor.moveToNext()){
-            usuario=new Modelo();
-            usuario.setNombre_cuenta(cursor.getString(0));
-            usuario.setValor_cuenta(cursor.getString(1));
+            cuenta=new Modelo();
+            cuenta.setNombre_cuenta(cursor.getString(0));
+            cuenta.setValor_cuenta(cursor.getString(1));
 
 
-            listaCuenta.add(usuario);
+            listaCuenta.add(cuenta);
         }
         obtenerLista();
     }
@@ -96,3 +97,4 @@ public class Ahorros extends AppCompatActivity {
     }
 
 }
+

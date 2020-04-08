@@ -1,17 +1,12 @@
-package com.example.prototipo;
+package com.example.prototipo.SQLite;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
 
-import com.example.prototipo.Utilidades.utilidades;
-
-import java.util.ArrayList;
+import com.example.prototipo.SQLite.utilidades;
 
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
@@ -29,6 +24,7 @@ public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAntigua, int versionNueva) {
+
 
     }
 }

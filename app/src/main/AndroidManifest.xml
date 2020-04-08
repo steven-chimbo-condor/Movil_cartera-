@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Deposito"></activity>
-        <activity android:name=".Ahorros" />
-        <activity android:name=".Banco" />
-        <activity android:name=".Cuenta" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Pantalla_imagen">
+        <activity android:name=".View.activity_Deposito"></activity>
+        <activity android:name=".View.activity_listview_cuentas" />
+        <activity android:name=".View.activity_Registro_cuenta" />
+        <activity android:name=".View.activity_Home" />
+        <activity android:name=".View.activity_inicio" />
+        <activity android:name=".View.activity_Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

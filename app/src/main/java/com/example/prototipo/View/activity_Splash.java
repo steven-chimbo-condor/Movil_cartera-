@@ -1,13 +1,14 @@
-package com.example.prototipo;
+package com.example.prototipo.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.Toast;
 
-public class Pantalla_imagen extends AppCompatActivity {
+import com.example.prototipo.R;
+
+public class activity_Splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,11 +17,11 @@ public class Pantalla_imagen extends AppCompatActivity {
         //Toast.makeText(this, "OnCreate", Toast.LENGTH_SHORT).show();
         // La actividad se esta creando.
 
-        setContentView(R.layout.activity_pantalla_imagen);
+        setContentView(R.layout.activity_splash);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent  intent = new Intent(Pantalla_imagen.this,MainActivity.class);
+                Intent  intent = new Intent(activity_Splash.this, activity_inicio.class);
                 startActivity(intent);
             }
         },3000);

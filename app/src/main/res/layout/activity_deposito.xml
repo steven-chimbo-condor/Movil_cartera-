@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/rectangulo"
-    tools:context=".Deposito">
+    tools:context=".View.activity_Deposito">
 
     <TextView
         android:id="@+id/textView2"

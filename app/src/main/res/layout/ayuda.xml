@@ -21,12 +21,12 @@
 
 
         <TextView
-            android:id="@+id/ayuda"
+            android:id="@+id/Cerrar"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="28dp"
-            android:background="@drawable/equis"
+            android:layout_marginTop="208dp"
+            android:layout_marginEnd="152dp"
+            android:background="@drawable/ok"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

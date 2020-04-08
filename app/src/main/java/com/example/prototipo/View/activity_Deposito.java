@@ -1,4 +1,4 @@
-package com.example.prototipo;
+package com.example.prototipo.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.prototipo.entidades.Modelo;
+import com.example.prototipo.Modelo.Modelo;
+import com.example.prototipo.R;
 
-public class Deposito  extends AppCompatActivity {
+public class activity_Deposito extends AppCompatActivity {
 
     private ImageView regresar;
     private TextView txt_nombre;
@@ -37,10 +38,14 @@ public class Deposito  extends AppCompatActivity {
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(Deposito.this,Ahorros.class);
+                Intent intent= new Intent(activity_Deposito.this, activity_listview_cuentas.class);
                 startActivity(intent);
 
             }
         });
+
+    }
+    public void SUMA(){
+
     }
 }

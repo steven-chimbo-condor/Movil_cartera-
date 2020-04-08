@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/rectangulo"
-    tools:context=".Ahorros">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/button3"
@@ -14,10 +12,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="56dp"
-        android:background="@drawable/miscuentas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crear" />
+        android:background="@drawable/miscuentas" />
 
     <ListView
         android:id="@+id/lista"
