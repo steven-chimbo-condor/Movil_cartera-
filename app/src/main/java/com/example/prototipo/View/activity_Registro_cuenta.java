@@ -51,7 +51,6 @@ public class activity_Registro_cuenta extends AppCompatActivity {
         crear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //GuardarDatos();
                 registrarCuentas();
 
                 nombre_cuenta.setText(null);
