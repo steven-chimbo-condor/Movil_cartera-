@@ -54,9 +54,16 @@ public class activity_Registro_cuenta extends AppCompatActivity {
                 if(nombre_cuenta.getText().toString().isEmpty()&& dinero.getText().toString().isEmpty()){
                     Toast.makeText(getApplicationContext(),"Campos obligatorios ",Toast.LENGTH_SHORT).show();
                 }else{
-                    registrarCuentas();
-                    nombre_cuenta.setText(null);
-                    dinero.setText(null);
+                    if(dinero.getText().toString().isEmpty()){
+
+                        Toast.makeText(getApplicationContext(),"debe ingresar la cantidad de apertura de su cuenta ",Toast.LENGTH_SHORT).show();
+                    }else{
+                        registrarCuentas();
+                        nombre_cuenta.setText(null);
+                        dinero.setText(null);
+
+                    }
+
                 }
 
             }

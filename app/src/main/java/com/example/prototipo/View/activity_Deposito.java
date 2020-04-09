@@ -66,8 +66,21 @@ public class activity_Deposito extends AppCompatActivity {
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Resta();
-                Valor_retiro.setText(null);
+                if(Deposito.getText().toString().isEmpty()){
+
+                    if (Valor_retiro.getText().toString().isEmpty()){
+
+                    }else{
+                        Resta();
+                        Guardar();
+                        Valor_retiro.setText(null);
+                    }
+
+                }else{
+                    Suma();
+                    Guardar();
+                    Deposito.setText(null);
+                }
             }
         });
 
@@ -118,7 +131,7 @@ public class activity_Deposito extends AppCompatActivity {
         ContentValues values=new ContentValues();
         values.put(utilidades.CAMPO_DINERO,txt_dinero.getText().toString());
         db.update(utilidades.TABLA_NOMBRE,values,utilidades.CAMPO_DINERO+"=?",parametros);
-        Toast.makeText(getApplicationContext(),"Ya se depositado corectamente ",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"transacción exitosa ",Toast.LENGTH_LONG).show();
         db.close();
     }
     //metodo para crea venta de ayuda
