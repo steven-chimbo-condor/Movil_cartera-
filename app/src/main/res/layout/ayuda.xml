@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="370dp"
     android:layout_height="300dp"
-    android:background="@drawable/rectangulo"
+    android:background="@drawable/fondo"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="5dp">
@@ -17,13 +17,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="2dp">
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/ayuda">
 
 
         <TextView
             android:id="@+id/Cerrar"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="51dp"
+            android:layout_height="43dp"
             android:layout_marginTop="208dp"
             android:layout_marginEnd="152dp"
             android:background="@drawable/ok"

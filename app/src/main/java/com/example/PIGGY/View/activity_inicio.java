@@ -1,4 +1,4 @@
-package com.example.prototipo.View;
+package com.example.PIGGY.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.example.prototipo.Modelo;
+package com.example.PIGGY.Modelo;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.example.prototipo.View;
+package com.example.PIGGY.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.PIGGY.SQLite.ConexionSQLiteHelper;
 import com.example.prototipo.R;
-import com.example.prototipo.SQLite.ConexionSQLiteHelper;
 
 public class activity_Home extends AppCompatActivity {
     ImageView crear;

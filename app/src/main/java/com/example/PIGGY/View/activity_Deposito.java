@@ -1,4 +1,4 @@
-package com.example.prototipo.View;
+package com.example.PIGGY.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,10 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.prototipo.Modelo.Modelo;
+import com.example.PIGGY.SQLite.ConexionSQLiteHelper;
+import com.example.PIGGY.Modelo.Modelo;
 import com.example.prototipo.R;
-import com.example.prototipo.SQLite.ConexionSQLiteHelper;
-import com.example.prototipo.SQLite.utilidades;
+import com.example.PIGGY.SQLite.utilidades;
 
 public class activity_Deposito extends AppCompatActivity {
 
@@ -112,7 +112,7 @@ public class activity_Deposito extends AppCompatActivity {
         int numero2=Integer.parseInt(valor2);
         if(numero1>numero2){
             resta=numero1-numero2;
-            Toast.makeText(getApplicationContext(),"Se retiro dinero ",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Se retiro dinero "+Valor_retiro,Toast.LENGTH_SHORT).show();
             String resultado=String.valueOf(resta);
             txt_dinero.setText(resultado);
         }else{

@@ -1,12 +1,8 @@
-package com.example.prototipo.SQLite;
+package com.example.PIGGY.SQLite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-
-
-import com.example.prototipo.SQLite.utilidades;
 
 public class ConexionSQLiteHelper extends SQLiteOpenHelper {
 

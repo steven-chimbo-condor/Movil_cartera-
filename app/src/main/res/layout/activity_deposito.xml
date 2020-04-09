@@ -61,11 +61,22 @@
         app:layout_constraintTop_toBottomOf="@+id/nombre_deposito"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/Vis_dinero"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/saldo_dinero"
+        app:layout_constraintTop_toTopOf="@+id/saldo_dinero"
+        app:srcCompat="@drawable/v_dinero" />
+
     <TextView
         android:id="@+id/Valor_deposito"
         android:layout_width="303dp"
         android:layout_height="39dp"
-        android:background="@drawable/valor_deposito"
+        android:background="@drawable/v_deposito"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"
@@ -85,17 +96,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Valor_deposito" />
 
+    <ImageView
+        android:id="@+id/V_dinero"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Deposito"
+        app:layout_constraintTop_toTopOf="@+id/Deposito"
+        app:srcCompat="@drawable/v_dinero" />
+
     <TextView
         android:id="@+id/Valor_Retiro"
-        android:layout_width="308dp"
-        android:layout_height="39dp"
-        android:background="@drawable/valor_deposito"
+        android:layout_width="306dp"
+        android:layout_height="34dp"
+        android:background="@drawable/v_retiro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.353"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Deposito"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <EditText
         android:id="@+id/Valor_retiro"
@@ -111,11 +132,22 @@
         app:layout_constraintTop_toBottomOf="@+id/Valor_Retiro"
         app:layout_constraintVertical_bias="0.103" />
 
+    <ImageView
+        android:id="@+id/Vi_dinero"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Valor_retiro"
+        app:layout_constraintTop_toTopOf="@+id/Valor_retiro"
+        app:srcCompat="@drawable/v_dinero" />
+
     <Button
         android:id="@+id/button_guardar"
         android:layout_width="196dp"
         android:layout_height="70dp"
-        android:background="@drawable/p_guardar"
+        android:background="@drawable/animaguarda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
