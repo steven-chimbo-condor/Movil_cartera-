@@ -51,10 +51,14 @@ public class activity_Registro_cuenta extends AppCompatActivity {
         crear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrarCuentas();
+                if(nombre_cuenta.getText().toString().isEmpty()&& dinero.getText().toString().isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Campos obligatorios ",Toast.LENGTH_SHORT).show();
+                }else{
+                    registrarCuentas();
+                    nombre_cuenta.setText(null);
+                    dinero.setText(null);
+                }
 
-                nombre_cuenta.setText(null);
-                dinero.setText(null);
             }
         });
     }
