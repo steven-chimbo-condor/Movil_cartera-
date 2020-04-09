@@ -90,8 +90,7 @@ public class activity_listview_cuentas extends AppCompatActivity {
         listaInformacion=new ArrayList<String>();
 
         for (int i=0; i<listaCuenta.size();i++){
-            listaInformacion.add(listaCuenta.get(i).getNombre_cuenta()+" - "
-                    +listaCuenta.get(i).getValor_cuenta());
+            listaInformacion.add(listaCuenta.get(i).getNombre_cuenta());
         }
 
     }

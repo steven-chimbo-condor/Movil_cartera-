@@ -9,7 +9,6 @@
     android:orientation="vertical"
     android:padding="5dp">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="365dp"
         android:layout_height="295dp"
@@ -17,23 +16,25 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="2dp"
-        android:background="@drawable/ayuda_retiro">
+        android:layout_marginBottom="2dp">
 
 
         <TextView
             android:id="@+id/Cerrar"
-            android:layout_width="88dp"
-            android:layout_height="73dp"
-            android:layout_marginTop="204dp"
-            android:layout_marginEnd="128dp"
-            android:background="@drawable/ok"
+            android:layout_width="311dp"
+            android:layout_height="281dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="144dp"
+            android:background="@drawable/ayuda_retiro"
             android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </RelativeLayout>

@@ -23,10 +23,13 @@ public class activity_Deposito extends AppCompatActivity {
     private ImageView regresar;
     private TextView txt_nombre;
     private TextView txt_dinero;
-    private Dialog daialogo;
+    Dialog daialogo;
 
     private TextView Deposito;
+    private TextView Valor_retiro;
     private Button guardar;
+
+    ConexionSQLiteHelper conn;
 
 
     @Override
@@ -34,11 +37,15 @@ public class activity_Deposito extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposito);
 
-        regresar= (ImageView) findViewById(R.id.regresar);
-        txt_nombre= findViewById(R.id.nombre_deposito);
+        conn=new ConexionSQLiteHelper(getApplicationContext(),"bd_cuenta",null,1);
+
+        regresar = (ImageView) findViewById(R.id.regresar);
+        txt_nombre = findViewById(R.id.nombre_deposito);
         txt_dinero = findViewById(R.id.saldo_dinero);
-        Deposito=(TextView)findViewById(R.id.Deposito);
-        guardar=(Button)findViewById(R.id.button_guardar);
+        Deposito = (TextView) findViewById(R.id.Deposito);
+        Valor_retiro = (TextView) findViewById(R.id.Valor_retiro);
+        guardar = (Button) findViewById(R.id.button_guardar);
+        daialogo = new Dialog(this);
 
         Bundle objetoEnviado=getIntent().getExtras();
         Modelo user=null;
@@ -59,29 +66,13 @@ public class activity_Deposito extends AppCompatActivity {
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Guardar();
-                Suma();
-                Deposito.setText(null);
-
+                Resta();
+                Valor_retiro.setText(null);
             }
         });
 
     }
-    //metodo para crea venta de ayuda
-    public void ShowPupop(View view){
-        TextView cerrar;
 
-        daialogo.setContentView(R.layout.activity_ayuda_retiro);
-        cerrar =  daialogo.findViewById(R.id.Cerrar);
-        cerrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                daialogo.dismiss();
-            }
-        });
-        daialogo.show();
-
-    }
     public void Suma(){
         String valor1=txt_dinero.getText().toString();
         String valor2= Deposito.getText().toString() ;
@@ -95,21 +86,54 @@ public class activity_Deposito extends AppCompatActivity {
         String resultado=String.valueOf(suma);
 
         txt_dinero.setText(resultado);
-        Toast.makeText(getApplicationContext(),"Sea depositado nuevo valor",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Sea depositado nuevo valor",Toast.LENGTH_SHORT).show();
 
     }
+    public void Resta(){
+        String valor1=txt_dinero.getText().toString();
+        String valor2= Valor_retiro.getText().toString() ;
+        int resta = 0;
+
+        //parceo los dos numeros
+        int numero1=Integer.parseInt(valor1);
+        int numero2=Integer.parseInt(valor2);
+        if(numero1>numero2){
+            resta=numero1-numero2;
+            Toast.makeText(getApplicationContext(),"Se retiro dinero ",Toast.LENGTH_SHORT).show();
+            String resultado=String.valueOf(resta);
+            txt_dinero.setText(resultado);
+        }else{
+            if(numero1<=numero2){
+                Toast.makeText(getApplicationContext(),"fondos insuficientes",Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
+
+    }
+
     public void Guardar(){
-        //es donde se guarda la base de datos SQLite
-        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,"bd_cuenta",null,1);
-        // escribir en la base de datos
         SQLiteDatabase db=conn.getWritableDatabase();
-        String [] parametro={txt_dinero.getText().toString()};
+        String[] parametros={txt_nombre.getText().toString()};
         ContentValues values=new ContentValues();
         values.put(utilidades.CAMPO_DINERO,txt_dinero.getText().toString());
-        db.update(utilidades.TABLA_NOMBRE,values,utilidades.CAMPO_DINERO,parametro);
-
-        Toast.makeText(getApplicationContext(),"Sea depositado nuevo valor",Toast.LENGTH_SHORT).show();
+        db.update(utilidades.TABLA_NOMBRE,values,utilidades.CAMPO_DINERO+"=?",parametros);
+        Toast.makeText(getApplicationContext(),"Ya se depositado corectamente ",Toast.LENGTH_LONG).show();
         db.close();
+    }
+    //metodo para crea venta de ayuda
+    public void ShowPupop(View view){
+        TextView cerrar;
+        daialogo.setContentView(R.layout.activity_ayuda_retiro);
+        cerrar = (TextView) daialogo.findViewById(R.id.Cerrar);
+        cerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                daialogo.dismiss();
+            }
+        });
+        daialogo.show();
 
     }
+
 }
