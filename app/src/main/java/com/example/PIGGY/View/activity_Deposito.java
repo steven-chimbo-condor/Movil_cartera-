@@ -85,7 +85,7 @@ public class activity_Deposito extends AppCompatActivity {
 
                 }else{
                     Deposito_cuenta();
-                    Guardar();
+                    //Guardar();
                     Deposito.setText(null);
                 }
             }
@@ -107,7 +107,7 @@ public class activity_Deposito extends AppCompatActivity {
         String resultado=String.valueOf(suma);
 
         txt_dinero.setText(resultado);
-        Toast.makeText(getApplicationContext(),"Sea depositado nuevo valor",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Su deposito es de:"+Deposito.getText()+" dolares"+"\n"+"su saldo alcual es de:"+txt_dinero.getText()+" dolares ",Toast.LENGTH_SHORT).show();
 
     }
     //metodo de retiro es una resta en donde el valor guardado lo restamos
@@ -123,7 +123,7 @@ public class activity_Deposito extends AppCompatActivity {
         //creamos el controlador con if y preguntamos
         if(numero1>numero2){
             resta=numero1-numero2;
-            Toast.makeText(getApplicationContext(),"Se retiro dinero "+Valor_retiro,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Su retiro es de: "+Valor_retiro.getText()+" dolares",Toast.LENGTH_SHORT).show();
             String resultado=String.valueOf(resta);
             txt_dinero.setText(resultado);
         }else{
