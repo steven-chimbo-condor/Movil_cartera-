@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="370dp"
+    android:layout_width="300dp"
     android:layout_height="300dp"
     android:background="@drawable/fondo"
     android:gravity="center"
@@ -11,13 +11,17 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="365dp"
-        android:layout_height="295dp"
+        android:layout_width="244dp"
+        android:layout_height="222dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="42dp"
         android:background="@drawable/ayuda">
 
 
@@ -25,8 +29,8 @@
             android:id="@+id/Cerrar"
             android:layout_width="51dp"
             android:layout_height="43dp"
-            android:layout_marginTop="208dp"
-            android:layout_marginEnd="152dp"
+            android:layout_marginTop="168dp"
+            android:layout_marginEnd="84dp"
             android:background="@drawable/ok"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"

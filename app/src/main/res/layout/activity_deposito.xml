@@ -41,7 +41,7 @@
         android:id="@+id/saldo_total"
         android:layout_width="118dp"
         android:layout_height="27dp"
-        android:background="@drawable/saldo_total"
+        android:background="@drawable/salado_total"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.136"
@@ -108,8 +108,8 @@
 
     <TextView
         android:id="@+id/Valor_Retiro"
-        android:layout_width="306dp"
-        android:layout_height="34dp"
+        android:layout_width="305dp"
+        android:layout_height="31dp"
         android:background="@drawable/v_retiro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

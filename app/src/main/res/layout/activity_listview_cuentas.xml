@@ -10,7 +10,7 @@
         android:layout_width="246dp"
         android:layout_height="32dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="56dp"
         android:background="@drawable/miscuentas" />
 
@@ -22,10 +22,10 @@
         android:layout_alignParentTop="false"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="326dp"
+        android:layout_marginStart="301dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="667dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="676dp"
         android:background="@drawable/regresar" />
 
     <ListView

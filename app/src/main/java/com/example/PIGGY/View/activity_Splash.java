@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.prototipo.R;
+import com.example.PIGGY.R;
 
 public class activity_Splash extends AppCompatActivity {
 
@@ -18,6 +18,7 @@ public class activity_Splash extends AppCompatActivity {
         // La actividad se esta creando.
 
         setContentView(R.layout.activity_splash);
+        //creo la interaccion del spash par aque en un tiempo determinado se me cambie de activity
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
